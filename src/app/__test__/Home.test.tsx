@@ -1,8 +1,10 @@
-import React from "react";
 import Home from "../page";
-import test from "node:test";
+import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
 
-
-test("render homepage correctly", () => {
-
+describe("Homepage", () => {
+    it("Render homepage correctly", () => {
+        render(<Home />);
+        expect(screen.getByText(/Get started by editing/i)).toBeInTheDocument();
+    })
 })
